@@ -1,0 +1,8 @@
+{
+  "name": "Start on Heroku: Node.js",
+  "description": "A chat Node.js app using Express 4",
+  "repository": "https://github.com/ShantiLund/flutterChatBackened.git",
+  "logo": "",
+  "keywords": [],
+  "image": "heroku/nodejs"
+}
