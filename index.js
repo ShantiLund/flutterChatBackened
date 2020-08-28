@@ -29,9 +29,7 @@ io.sockets.on(ON_CONNECT, function (socket) {
                 socket.username = username;
                 userSocket[socket.username] = socket.id;
           
-                socket.broadcast.emit("broadcast", {
-                  message: username + " Logged In"
-                });
+                socket.broadcast.emit("broadcast", username);
 	// userSocket.on(EVENT_SEND_MESSAGE, function (chat_message) {
         //         userSocket.broadcast.emit(EVENT_RECEIVE_MESSAGE, chat_message);
         // });
