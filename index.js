@@ -23,16 +23,17 @@ const userStack = {};
 io.sockets.on(ON_CONNECT, function (socket) {
         console.log("connected");
         socket.on("set-user-data", function(username) {
-                //console.log(username + "  logged In");
+               // console.log(username + "  logged In");
           
                 //storing variable.
                 socket.username = username;
                 userSocket[socket.username] = socket.id;
           
-                socket.broadcast.emit("broadcast", username);
-            });
+                socket.broadcast.emit("broadcast", {
+                  description: username + " Logged In"
+                });
 	// userSocket.on(EVENT_SEND_MESSAGE, function (chat_message) {
         //         userSocket.broadcast.emit(EVENT_RECEIVE_MESSAGE, chat_message);
         // });
 });
-
+});
