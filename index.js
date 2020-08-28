@@ -11,15 +11,28 @@ app.get('/', (req, res) => {
         res.send("Node Server is running. Yay!!")
 });
 
-let EVENT_SEND_MESSAGE = 'send_message';
-let EVENT_RECEIVE_MESSAGE = 'receive_message';
+let EVENT_SEND_MESSAGE = 'set-user-data';
+let EVENT_RECEIVE_MESSAGE = 'broadcast';
 
 let listen_port = process.env.PORT;
 console.log(process.env.PORT);
 server.listen(listen_port);
-
-io.sockets.on(ON_CONNECT, function (userSocket) {
-	userSocket.on(EVENT_SEND_MESSAGE, function (chat_message) {
-                userSocket.broadcast.emit(EVENT_RECEIVE_MESSAGE, chat_message);
-        });
+const userStack = {};
+  let oldChats, sendUserStack, setRoom;
+  const userSocket = {};
+io.sockets.on(ON_CONNECT, function (socket) {
+        console.log("connected");
+        socket.on("set-user-data", function(username) {
+                //console.log(username + "  logged In");
+          
+                //storing variable.
+                socket.username = username;
+                userSocket[socket.username] = socket.id;
+          
+                socket.broadcast.emit("broadcast", username);
+            });
+	// userSocket.on(EVENT_SEND_MESSAGE, function (chat_message) {
+        //         userSocket.broadcast.emit(EVENT_RECEIVE_MESSAGE, chat_message);
+        // });
 });
+

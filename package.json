@@ -9,6 +9,10 @@
     "http": "0.0.1-security",
     "socket.io": "^2.3.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShantiLund/flutterChatBackened.git"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
