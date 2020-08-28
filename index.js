@@ -35,5 +35,9 @@ io.sockets.on(ON_CONNECT, function (socket) {
 	// userSocket.on(EVENT_SEND_MESSAGE, function (chat_message) {
         //         userSocket.broadcast.emit(EVENT_RECEIVE_MESSAGE, chat_message);
         // });
+        socket.on("set-nouser-data", function(username) {
+                console.log((((("not called")))));
+        });
+
 });
 });
