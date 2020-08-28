@@ -11,8 +11,8 @@ app.get('/', (req, res) => {
         res.send("Node Server is running. Yay!!")
 });
 
-let EVENT_SEND_MESSAGE = 'set-user-data';
-let EVENT_RECEIVE_MESSAGE = 'broadcast';
+let EVENT_SEND_MESSAGE = 'send_message';
+let EVENT_RECEIVE_MESSAGE = 'receive_message';
 
 let listen_port = process.env.PORT;
 console.log(process.env.PORT);
