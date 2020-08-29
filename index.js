@@ -6,7 +6,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 const events = require("events");
 const _ = require("lodash");
-require('./src/models')(app);
+require('../src/models')(app);
 const eventEmitter = new events.EventEmitter();
 
 //adding db models
