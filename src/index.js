@@ -10,9 +10,9 @@ const _ = require("lodash");
 const eventEmitter = new events.EventEmitter();
 
 //adding db modelss
-const userModel=require('../models/user.js');
-const chatModel=require('../models/chat.js');
-const roomModel=require('../models/room.js');
+const userModel=require('src/models/user.js');
+const chatModel=require('src/models/chat.js');
+const roomModel=require('src/models/room.js');
 //require("const Video=require('../models/video.model.js');");
 //require("../../src/models/room.js");
 
