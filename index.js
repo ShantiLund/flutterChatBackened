@@ -6,13 +6,13 @@ var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 const events = require("events");
 const _ = require("lodash");
-require('../src/models')(app);
+
 const eventEmitter = new events.EventEmitter();
 
-//adding db models
-const userModel=require('flutterChatBackened/src/models/user.js');
-const chatModel=require('flutterChatBackened/src/models/chat.js');
-const roomModel=require('flutterChatBackened/src/models/room.js');
+//adding db modelss
+const userModel=require('src/models/user.js');
+const chatModel=require('src/models/chat.js');
+const roomModel=require('src/models/room.js');
 //require("const Video=require('../models/video.model.js');");
 //require("../../src/models/room.js");
 
