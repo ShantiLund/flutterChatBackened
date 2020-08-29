@@ -9,9 +9,9 @@ const _ = require("lodash");
 const eventEmitter = new events.EventEmitter();
 
 //adding db models
-require("../nodejs/models/user.js")
-require("../nodejs/models/chat.js");
-require("../nodejs/models/room.js");
+require("models/user.js")
+require("models/chat.js");
+require("models/room.js");
 
 
 //using mongoose Schema models
@@ -67,7 +67,7 @@ io.sockets.on(ON_CONNECT, function (socket) {
         }
         //for popping connection message.
         ioChat.emit("onlineStack", userStack);
-        
+
       }; //end of sendUserStack function.
     }); //end of set-user-data event.
 
