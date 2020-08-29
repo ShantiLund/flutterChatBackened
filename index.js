@@ -9,9 +9,9 @@ const _ = require("lodash");
 const eventEmitter = new events.EventEmitter();
 
 //adding db models
-require("../models/user.js")
-require("../models/chat.js");
-require("../models/room.js");
+require("../../src/models/user.js")
+require("../../src/models/chat.js");
+require("../../src/models/room.js");
 
 
 //using mongoose Schema models
