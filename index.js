@@ -9,15 +9,17 @@ const _ = require("lodash");
 const eventEmitter = new events.EventEmitter();
 
 //adding db models
-require("../../src/models/user.js")
-require("../../src/models/chat.js");
-require("../../src/models/room.js");
+const userModel=require('../nodejs/src/models/user.js');
+const chatModel=require('../nodejs/src/models/chat.js');
+const roomModel=require('../nodejs/src/models/room.js');
+//require("const Video=require('../models/video.model.js');");
+//require("../../src/models/room.js");
 
 
-//using mongoose Schema models
-const userModel = mongoose.model("User");
-const chatModel = mongoose.model("Chat");
-const roomModel = mongoose.model("Room");
+// //using mongoose Schema models
+// const userModel = mongoose.model("User");
+// const chatModel = mongoose.model("Chat");
+// const roomModel = mongoose.model("Room");
 let ON_CONNECT = 'connection';
 let ON_DISCONNECT = 'disconnect';
 let EVENT_SEND_MESSAGE = 'send_message';
