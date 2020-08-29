@@ -8,4 +8,4 @@ const chatSchema = new Schema({
   createdOn: { type: Date, default: Date.now }
 });
 
-mongoose.model("Chat", chatSchema);
+module.exports = mongoose.model("Chat", chatSchema);
